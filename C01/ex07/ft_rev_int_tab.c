@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 18:12:12 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/05 21:40:48 by verrodri         ###   ########.fr       */
+/*   Created: 2024/03/05 21:24:50 by verrodri          #+#    #+#             */
+/*   Updated: 2024/03/05 22:06:08 by verrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 
-int	ft_strlen(char *str)
+void	ft_rev_int_tab(int *tab, int size)
 {
 	int	i;
+	int	tmp;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (i < (size / 2))
 	{
+		tmp = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = tmp;
 		i++;
 	}
-	return (i);
-}
-
-void	ft_putstr(char *str)
-{
-	int	a;
-
-	a = ft_strlen(str);
-	write(1, str, a);
 }
 
 /*int	main(void)
 {
-	ft_putstr("hello");
-	return (0);
+	int	i = 0;
+
+	int	tab[] = {1, 2, 3, 4, 5, 6};
+	ft_rev_int_tab(tab, 6);
+	while (i < 6)
+	{
+		printf("%d ", tab[i]);
+		i++;
+	}
 }*/
