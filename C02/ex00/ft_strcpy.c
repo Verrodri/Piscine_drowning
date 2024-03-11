@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 14:19:32 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/07 16:17:07 by verrodri         ###   ########.fr       */
+/*   Created: 2024/03/06 14:49:53 by verrodri          #+#    #+#             */
+/*   Updated: 2024/03/11 18:10:13 by verrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdio.h>
 
-void	ft_swap(int *a, int *b)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int	tmp;
+	int	i;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src [i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest); 
 }
 
 /*int	main(void)
 {
-	int	a;
-	int	b;
-	int	*ptra;
-	int	*ptrb;
+	char	str1[] = "Hello";
+	char	str2[] = "Bye";
 
-	ptra = &a;
-	ptrb = &b;
-	a = 3;
-	b = 2;
-	ft_swap(ptra, ptrb);
-	printf("a:%d b:%d", a, b);
+	printf("%s\n", str1);
+	ft_strcpy(str1, str2);
+	printf("%s\n", str1);
 	return (0);
 }*/

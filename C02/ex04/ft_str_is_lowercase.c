@@ -6,7 +6,7 @@
 /*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 14:13:13 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/09 14:56:52 by verrodri         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:16:16 by verrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_str_is_lowercase(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 'a' && str[i] > 'z')
+		if (str[i] < 'a' || str[i] > 'z')
 		{
 			return (0);
 		}
@@ -27,3 +27,8 @@ int	ft_str_is_lowercase(char *str)
 	}
 	return (1);
 }
+
+/*int main(void)
+{
+	ft_str_is_lowercase("abc");
+}*/

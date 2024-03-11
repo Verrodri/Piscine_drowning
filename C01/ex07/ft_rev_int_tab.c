@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 21:24:50 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/05 22:06:08 by verrodri         ###   ########.fr       */
+/*   Created: 2024/03/06 12:07:49 by verrodri          #+#    #+#             */
+/*   Updated: 2024/03/06 12:08:06 by verrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/*#include <stdio.h>*/
 
 void	ft_rev_int_tab(int *tab, int size)
 {

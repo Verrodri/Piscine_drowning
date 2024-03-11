@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 16:38:55 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/05 17:18:27 by verrodri         ###   ########.fr       */
+/*   Created: 2024/03/06 12:02:28 by verrodri          #+#    #+#             */
+/*   Updated: 2024/03/06 12:14:30 by verrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/*#include <stdio.h>*/
 
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {

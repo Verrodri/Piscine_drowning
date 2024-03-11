@@ -6,7 +6,7 @@
 /*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 14:16:01 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/09 14:56:33 by verrodri         ###   ########.fr       */
+/*   Updated: 2024/03/11 18:17:25 by verrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_str_is_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 32 && str[i] > 126)
+		if (str[i] < 32 || str[i] > 126)
 		{
 			return (0);
 		}
@@ -27,3 +27,8 @@ int	ft_str_is_printable(char *str)
 	}
 	return (1);
 }
+
+/*int main(void)
+{
+	ft_str_is_printable("!#*");
+}*/
