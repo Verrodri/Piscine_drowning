@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   paramsum.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: angavrel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 18:12:12 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/05 21:40:48 by verrodri         ###   ########.fr       */
+/*   Created: 2016/12/07 17:58:26 by angavrel          #+#    #+#             */
+/*   Updated: 2016/12/08 17:15:42 by angavrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+void	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+void	ft_putnbr(int n)
 {
-	int	a;
-
-	a = ft_strlen(str);
-	write(1, str, a);
+	if (n > 9)
+		ft_putnbr(n / 10);
+	ft_putchar(n % 10 +'0');
 }
 
-int	main(void)
+int		main(int ac, char **av)
 {
-	ft_putstr("hello");
-	return (0);
+	av = 0;
+	ft_putnbr(ac - 1);
+	write(1, "\n", 1);
 }

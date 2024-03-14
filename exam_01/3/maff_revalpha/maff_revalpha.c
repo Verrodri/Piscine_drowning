@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   maff_revalpha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 18:12:12 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/05 21:40:48 by verrodri         ###   ########.fr       */
+/*   Created: 2017/07/14 12:30:57 by fwuensch          #+#    #+#             */
+/*   Updated: 2017/07/14 12:30:58 by fwuensch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+void	ft_putchar(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+int		main(void)
 {
-	int	a;
+	int i;
 
-	a = ft_strlen(str);
-	write(1, str, a);
-}
-
-int	main(void)
-{
-	ft_putstr("hello");
+	i = 123;
+	while (i-- > 97)
+		(i % 2 == 0) ? ft_putchar(i) : ft_putchar(i - 32);
+	ft_putchar('\n');;
 	return (0);
 }

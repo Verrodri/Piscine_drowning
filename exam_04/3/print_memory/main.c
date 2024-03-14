@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: angavrel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 18:12:12 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/05 21:40:48 by verrodri         ###   ########.fr       */
+/*   Created: 2016/11/24 20:36:22 by angavrel          #+#    #+#             */
+/*   Updated: 2017/02/26 12:43:29 by angavrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+void	print_memory(const void *addr, size_t size);
+
+int		main(void)
 {
-	int	i;
+	int		tab[15] = {3772900067, 58597, 59111,
+		59625, 60139, 60653, 61167, 61681, 62195, 62709, 63223, 63737, 64251,
+	64765, 65279};
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-void	ft_putstr(char *str)
-{
-	int	a;
-
-	a = ft_strlen(str);
-	write(1, str, a);
-}
-
-int	main(void)
-{
-	ft_putstr("hello");
+	print_memory(tab, sizeof(tab));
 	return (0);
 }

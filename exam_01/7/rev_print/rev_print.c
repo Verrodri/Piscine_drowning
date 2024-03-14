@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: angavrel <angavrel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 18:12:12 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/05 21:40:48 by verrodri         ###   ########.fr       */
+/*   Created: 2016/12/27 10:47:34 by angavrel          #+#    #+#             */
+/*   Updated: 2017/07/14 15:38:39 by fwuensch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+void	ft_putchar(char c)
 {
-	int	i;
+	write(1, &c, 1);
+}
+
+
+int		ft_strlen(char *s)
+{
+	int i;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
+	while (s[i])
 		i++;
-	}
 	return (i);
 }
 
-void	ft_putstr(char *str)
-{
-	int	a;
 
-	a = ft_strlen(str);
-	write(1, str, a);
-}
-
-int	main(void)
+int		main(int ac, char **av)
 {
-	ft_putstr("hello");
-	return (0);
+	int len;
+
+	if (ac == 2)
+	{
+		len = ft_strlen(av[1]);
+		while (len--)
+			write(1, &av[1][len], 1);
+	}
+	ft_putchar('\n');
 }

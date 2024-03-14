@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   wdmatch.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcluzet <jo@cluzet.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 18:12:12 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/05 21:40:48 by verrodri         ###   ########.fr       */
+/*   Created: 2016/12/05 20:21:01 by angavrel          #+#    #+#             */
+/*   Updated: 2021/07/02 20:06:32 by jcluzet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+void	wdmatch(char *s1, char *s2)
 {
-	int	i;
+	int len = 0;
+	int i = 0;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-void	ft_putstr(char *str)
-{
-	int	a;
-
-	a = ft_strlen(str);
-	write(1, str, a);
-}
-
-int	main(void)
-{
-	ft_putstr("hello");
-	return (0);
+	while (s1[len])
+		++len;
+	while (*s2 && i < len)
+		(*s2++ == s1[i]) ? ++i : 0;
+	if (i == len)
+		write(1, s1, len);
 }

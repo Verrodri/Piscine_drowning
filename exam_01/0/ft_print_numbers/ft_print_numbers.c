@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 18:12:12 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/05 21:40:48 by verrodri         ###   ########.fr       */
+/*   Created: 2017/07/14 11:55:29 by fwuensch          #+#    #+#             */
+/*   Updated: 2017/07/14 11:55:56 by fwuensch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_strlen(char *str)
+void    ft_print_numbers(void)
 {
-	int	i;
+    char nb;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-void	ft_putstr(char *str)
-{
-	int	a;
-
-	a = ft_strlen(str);
-	write(1, str, a);
-}
-
-int	main(void)
-{
-	ft_putstr("hello");
-	return (0);
+    nb = '0';
+    while (nb <= '9')
+    {
+        write(1, &nb, 1);
+        nb++;
+    }
 }

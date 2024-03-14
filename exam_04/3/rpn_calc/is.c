@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   is.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: angavrel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 18:12:12 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/05 21:40:48 by verrodri         ###   ########.fr       */
+/*   Created: 2016/12/06 16:35:57 by angavrel          #+#    #+#             */
+/*   Updated: 2016/12/06 16:36:00 by angavrel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "rpn_calc.h"
 
-int	ft_strlen(char *str)
+int	is_op(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	return (c == '+' ||
+			c == '-' ||
+			c == '*' ||
+			c == '/' ||
+			c == '%');
 }
 
-void	ft_putstr(char *str)
+int	is_digit(int c)
 {
-	int	a;
-
-	a = ft_strlen(str);
-	write(1, str, a);
+	return ('0' <= c && c <= '9');
 }
 
-int	main(void)
+int	is_space(int c)
 {
-	ft_putstr("hello");
-	return (0);
+	return (c == 32);
 }
