@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: verrodri <verrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 14:19:32 by verrodri          #+#    #+#             */
-/*   Updated: 2024/03/07 16:17:07 by verrodri         ###   ########.fr       */
+/*   Created: 2024/03/04 12:19:29 by verrodri          #+#    #+#             */
+/*   Updated: 2024/03/06 12:21:15 by verrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/*#include <stdio.h>*/
 
-void	ft_swap(int *a, int *b)
+void	ft_ft(int *nbr)
 {
-	int	tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
+	*nbr = 42;
 }
 
-/*int	main(void)
-{
-	int	a;
-	int	b;
-	int	*ptra;
-	int	*ptrb;
+/*int	main(void){
+	int = a;
+	int *ptr
 
-	ptra = &a;
-	ptrb = &b;
-	a = 3;
-	b = 2;
-	ft_swap(ptra, ptrb);
-	printf("a:%d b:%d", a, b);
-	return (0);
-}*/
+	*ptr =&a;
+	ft_ft(ptr);
+	printf("%d", a);
+}
+*/
