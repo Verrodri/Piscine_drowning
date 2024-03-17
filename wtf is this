@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int	ft_iterative_factorial(int nb)
+{
+	int	i;
+
+	i = 0;
+	if (nb == '\0')
+	{
+		return (1);
+	}
+	if (nb < 0)
+	{
+		return (0);
+	}
+	while (nb > 1)
+	{
+		nb *= (i - 1);
+		i--;
+	}
+	return (nb);
+}
+
+/*int main()
+{
+	int	number = 5;
+	int	result = ft_iterative_factorial(number);
+	printf("Factorial of %d is %d\n", number, result);
+	return (0);
+}*/
